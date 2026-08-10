@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
   ballData: {fileID: 885362315}
+  gameManager: {fileID: 2099516622}
 --- !u!1 &906715295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1919,10 @@ MonoBehaviour:
   PaddlePlayer: {fileID: 375802338}
   PaddleEnemy: {fileID: 1155479021}
   ballMovement: {fileID: 885362316}
+  playerPoints: 0
+  enemyPoints: 0
+  textPointPlayer: {fileID: 1014575675}
+  textPointEnemy: {fileID: 857362353}
 --- !u!4 &2099516623
 Transform:
   m_ObjectHideFlags: 0
