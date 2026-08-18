@@ -24,6 +24,7 @@ public class BallMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        #region Colisao com as paredes
         //Se colidir com a parede, ele inverte o sentido Y da bola
         if (collision.gameObject.CompareTag("Wall"))
         {
@@ -32,19 +33,22 @@ public class BallMovement : MonoBehaviour
             newVelocity.y = -newVelocity.y;
             rb.linearVelocity = newVelocity;
         }
+        #endregion
 
-        //Se colidir com os Paddle, ele inverte o sentido X da bola
+        #region Colision with player - enemy
+        //Se colidir com o player, ele inverte o sentido X da bola e altera o angulo da bola
         if (collision.gameObject.CompareTag("Player"))
         {
             rb.linearVelocity = new Vector2(-rb.linearVelocity.x, (rb.linearVelocity.y + playerPaddle.transform.position.y));
         }
 
-        //Se colidir com os Paddle, ele inverte o sentido X da bola
         if (collision.gameObject.CompareTag("Enemy"))
         {
             rb.linearVelocity = new Vector2(-rb.linearVelocity.x, (rb.linearVelocity.y + enemyPaddle.transform.position.y));
         }
+        #endregion
 
+        #region Parede de pontuacao
         //Se colidir com a parede de pontuacao, ele soma 1 ponto
         if (collision.gameObject.CompareTag("Wall Player"))
         {
@@ -57,7 +61,7 @@ public class BallMovement : MonoBehaviour
             gameManager.PlayerScore();
             ResetBall();
         }
+        #endregion
     }
-
 
 }
