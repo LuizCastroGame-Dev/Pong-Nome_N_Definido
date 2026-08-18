@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
@@ -8,6 +9,10 @@ public class BallMovement : MonoBehaviour
     public GameManager gameManager;
 
     private Rigidbody2D rb;
+
+    public GameObject playerPaddle;
+
+    public GameObject enemyPaddle;
 
     public void ResetBall()
     {
@@ -29,9 +34,15 @@ public class BallMovement : MonoBehaviour
         }
 
         //Se colidir com os Paddle, ele inverte o sentido X da bola
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            rb.linearVelocity = new Vector2(-rb.linearVelocity.x, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(-rb.linearVelocity.x, (rb.linearVelocity.y + playerPaddle.transform.position.y));
+        }
+
+        //Se colidir com os Paddle, ele inverte o sentido X da bola
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            rb.linearVelocity = new Vector2(-rb.linearVelocity.x, (rb.linearVelocity.y + enemyPaddle.transform.position.y));
         }
 
         //Se colidir com a parede de pontuacao, ele soma 1 ponto
