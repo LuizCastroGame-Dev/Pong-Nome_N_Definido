@@ -1,21 +1,28 @@
 using NUnit.Framework.Internal;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-
+    [Header("Managers")]
     public BallData ballData;
-
     public GameManager gameManager;
+
+    [Header("Player - Enemy")]
+    public GameObject playerPaddle;
+    public GameObject enemyPaddle;
+
+    [Header("Parry and waiting seconds for parry")]
+    public Vector2 parryVelocityIntence = new Vector2(2f, 2f);
+    public float parryWaitSeconds = 4f;
 
     private Rigidbody2D rb;
 
-    public GameObject playerPaddle;
-
-    public GameObject enemyPaddle;
-
     public void ResetBall()
     {
+        StopAllCoroutines();
+
         transform.position = Vector3.zero;
 
         if (rb == null) rb = GetComponent<Rigidbody2D>();
@@ -64,4 +71,45 @@ public class BallMovement : MonoBehaviour
         #endregion
     }
 
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        #region Parry
+        if (collision.gameObject.CompareTag("Parry"))
+        {
+            StartCoroutine(Parry());
+        }
+        #endregion
+    }
+
+    #region Parry - Coroutine - logic
+    IEnumerator Parry()
+    {
+        if (rb.linearVelocity.x < 0)
+        {
+            rb.linearVelocity += -parryVelocityIntence;
+            yield return new WaitForSeconds(parryWaitSeconds);
+            if (rb.linearVelocity.x < 0)
+            {
+                rb.linearVelocity += parryVelocityIntence;
+            }
+            else
+            {
+                rb.linearVelocity += -parryVelocityIntence;
+            }
+        }
+        else
+        {
+            rb.linearVelocity += parryVelocityIntence;
+            yield return new WaitForSeconds(parryWaitSeconds);
+            if (rb.linearVelocity.x < 0)
+            {
+                rb.linearVelocity += parryVelocityIntence;
+            }
+            else
+            {
+                rb.linearVelocity += -parryVelocityIntence;
+            }
+        }
+    }
+    #endregion
 }

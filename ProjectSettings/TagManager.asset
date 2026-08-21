@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Wall Player
   - Wall Enemy
+  - Parry
   layers:
   - Default
   - TransparentFX
