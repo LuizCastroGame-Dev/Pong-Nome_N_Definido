@@ -6,9 +6,14 @@ public class GameManager : MonoBehaviour
 {
     [Header("Paddles")]
     public Transform PaddlePlayer;
+
+    public Vector3 playerPosition = new Vector3(-7.5f, 0f, 0f);
+
     public Transform PaddleEnemy;
 
-    [Header("Ball Movement")]
+    public Vector3 enemyPosition = new Vector3(7.5f, 0f, 0f);
+
+    [Header("Ball")]
     public BallMovement ballMovement;
 
     [Header("Points")]
@@ -42,8 +47,8 @@ public class GameManager : MonoBehaviour
         interactObjects.SetActive(true);
 
         //Paddle Reset
-        PaddlePlayer.position = new Vector3(-7.5f, 0f, 0f);
-        PaddleEnemy.position = new Vector3(7.5f, 0f, 0f);
+        PaddlePlayer.position = playerPosition;
+        PaddleEnemy.position = enemyPosition;
 
         //Ball Reset
         ballMovement.ResetBall();

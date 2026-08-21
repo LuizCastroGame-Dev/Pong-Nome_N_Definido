@@ -4,7 +4,13 @@ public class PaddleInput : MonoBehaviour
 {
     public float InputReader()
     {
-        float moveinput = Input.GetAxis("Vertical");
-        return moveinput;
+        float moveInput = Input.GetAxis("Vertical");
+        return moveInput;
+    }
+
+    public bool InputParry() 
+    {
+        bool parryInput = Input.GetButtonDown("Fire1");
+        return parryInput;
     }
 }
