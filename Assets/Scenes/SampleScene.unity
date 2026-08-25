@@ -1560,6 +1560,7 @@ GameObject:
   - component: {fileID: 885362314}
   - component: {fileID: 885362316}
   - component: {fileID: 885362315}
+  - component: {fileID: 885362317}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -1733,10 +1734,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
   ballData: {fileID: 885362315}
   gameManager: {fileID: 2099516622}
+  ballParry: {fileID: 885362317}
   playerPaddle: {fileID: 375802334}
   enemyPaddle: {fileID: 1155479017}
-  parryVelocityIntence: {x: 2, y: 0}
-  parryWaitSeconds: 4
+--- !u!114 &885362317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885362309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e6100a9bdbef94d85e1bdc977ebd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallParry
+  parrySpeedBonus: {x: 2, y: 0}
+  parryDuration: 4
 --- !u!1 &903531065
 GameObject:
   m_ObjectHideFlags: 0
