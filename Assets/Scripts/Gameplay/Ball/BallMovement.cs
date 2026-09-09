@@ -19,7 +19,7 @@ public class BallMovement : MonoBehaviour
 
     public void ResetBall()
     {
-        stopAddVelocity();
+        StopAddVelocity();
 
         transform.position = Vector3.zero;
 
@@ -68,9 +68,8 @@ public class BallMovement : MonoBehaviour
         #endregion
     }
 
-    private void stopAddVelocity()
+    private void StopAddVelocity()
     {
-        //Adicionar power-ups que agrega velocidade aqui e parry
         ballParry.StopParry();
     }
 }

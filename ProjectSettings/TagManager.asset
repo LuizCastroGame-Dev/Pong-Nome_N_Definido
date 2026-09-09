@@ -10,6 +10,7 @@ TagManager:
   - Wall Player
   - Wall Enemy
   - Parry
+  - Power Up
   layers:
   - Default
   - TransparentFX
