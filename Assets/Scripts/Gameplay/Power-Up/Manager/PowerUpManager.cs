@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class PowerUpManager : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class PowerUpManager : MonoBehaviour
     public List<GameObject> powerUps;
     public List<Transform> SpawnPoints;
 
+    [Header("Spawn config")]
     public float spawnTime = 20f;
+    public GameObject paddlePlayer;
 
+    //Spawn Control
     private bool onPowerUp;
-    private GameObject objectInstantiate;
+    private bool onPowerExisting;
+    private List<GameObject> objectInstantiate = new List<GameObject>();
+    private PaddleInventory paddleInventory;
 
     private void Update()
     {
@@ -23,14 +29,23 @@ public class PowerUpManager : MonoBehaviour
 
     public void SpawnPowerUp()
     {
+        paddleInventory = paddlePlayer.GetComponent<PaddleInventory>();
+
         if (!onPowerUp)
         {
-            if (objectInstantiate != null)
+            onPowerExisting = false;
+
+            foreach (GameObject powerUp in objectInstantiate)
             {
-                Debug.Log("Power-up em tela: " + objectInstantiate);
-                return;
+                
+                if (powerUp != null && powerUp.activeInHierarchy)
+                {
+                    onPowerExisting = true;
+                    break; 
+                }
             }
-            else
+
+            if (!onPowerExisting && paddleInventory.playerInventory.Count < 3)
             {
                 StartCoroutine(PowerUpLogic());
             }
@@ -53,7 +68,7 @@ public class PowerUpManager : MonoBehaviour
             Transform spawnPointAleatorio = SpawnPoints[indiceAleatorioSpawnPoints];
             Debug.Log("Spawn Point escolhido: " + spawnPointAleatorio);
 
-            objectInstantiate = Instantiate(powerUpAleatorio, spawnPointAleatorio.position, spawnPointAleatorio.rotation);
+            objectInstantiate.Add(Instantiate(powerUpAleatorio, spawnPointAleatorio.position, spawnPointAleatorio.rotation));
 
             onPowerUp = false;
         }

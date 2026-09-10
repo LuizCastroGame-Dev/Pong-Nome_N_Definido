@@ -7,6 +7,12 @@ public abstract class PowerUpBase : MonoBehaviour
 
     public Sprite powerUpSprite;
 
+    public GameObject paddlePlayer;
+    private PaddleInventory paddleInventory;
+
+    private InventoryPlayer inventoryPlayer;
+    public GameObject inventoryPaddlePlayer;
+
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -17,8 +23,18 @@ public abstract class PowerUpBase : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            ApplyEffect(collision.gameObject);
-            Destroy(gameObject);
+
+            paddleInventory = paddlePlayer.GetComponent<PaddleInventory>();
+            inventoryPlayer = inventoryPaddlePlayer.GetComponent<InventoryPlayer>();
+
+
+            if (paddleInventory != null)
+            {
+                paddleInventory.playerInventory.Add(this.gameObject);
+                inventoryPlayer.refreshUI(paddleInventory.playerInventory);
+            }
+
+            gameObject.SetActive(false);
         }
     }
 

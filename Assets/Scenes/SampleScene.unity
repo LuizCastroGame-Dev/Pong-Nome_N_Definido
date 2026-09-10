@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpStopBall
   powerUpSprite: {fileID: -5958591943913963830, guid: 45ed88d2074b0ff4cb0502094ed4303e, type: 3}
+  paddlePlayer: {fileID: 375802334}
+  inventoryPaddlePlayer: {fileID: 2067577859}
   ball: {fileID: 885362309}
 --- !u!4 &118533285 stripped
 Transform:
@@ -738,6 +740,7 @@ GameObject:
   - component: {fileID: 375802339}
   - component: {fileID: 375802344}
   - component: {fileID: 375802345}
+  - component: {fileID: 375802346}
   m_Layer: 0
   m_Name: Paddle - Player
   m_TagString: Player
@@ -969,6 +972,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaddlePowerUps
   paddleData: {fileID: 375802341}
   PaddleSpeedUp: 2
+--- !u!114 &375802346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375802334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6c67a3e7eba9b4aa99cfcb9472ce4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaddleInventory
+  playerInventory: []
 --- !u!1 &405824971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1659,7 +1675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1836,6 +1852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpPaddleSpeedUp
   powerUpSprite: {fileID: 8315648963213112415, guid: 16f4dd201201de14093b2abebdb66ff2, type: 3}
+  paddlePlayer: {fileID: 375802334}
+  inventoryPaddlePlayer: {fileID: 2067577859}
   paddle: {fileID: 375802334}
 --- !u!4 &695199819 stripped
 Transform:
@@ -1899,7 +1917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1974,7 +1992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2580,7 +2598,6 @@ MonoBehaviour:
   ballParry: {fileID: 885362317}
   playerPaddle: {fileID: 375802334}
   enemyPaddle: {fileID: 1155479017}
-  lastPaddle: 
 --- !u!114 &885362317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,6 +2852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpChangeBallTraject
   powerUpSprite: {fileID: -6061798731232083314, guid: 96f24eef838ea4a44b246bf95b1d34da, type: 3}
+  paddlePlayer: {fileID: 375802334}
+  inventoryPaddlePlayer: {fileID: 2067577859}
   ball: {fileID: 885362309}
 --- !u!1 &958570682
 GameObject:
@@ -2893,7 +2912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3863,6 +3882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpBallSpeedDown
   powerUpSprite: {fileID: -897383169346953859, guid: c1fe5a1fe25ad934fa5f88146841387b, type: 3}
+  paddlePlayer: {fileID: 375802334}
+  inventoryPaddlePlayer: {fileID: 2067577859}
   ball: {fileID: 885362309}
 --- !u!4 &1368203115 stripped
 Transform:
@@ -4383,6 +4404,7 @@ MonoBehaviour:
   - {fileID: 2078657689}
   - {fileID: 582752828}
   spawnTime: 20
+  paddlePlayer: {fileID: 375802334}
 --- !u!1 &1654872466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4687,6 +4709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpBallSpeedUp
   powerUpSprite: {fileID: 4903034629315012892, guid: 26d0472e5dab25d4b8d339475e27c529, type: 3}
+  paddlePlayer: {fileID: 375802334}
+  inventoryPaddlePlayer: {fileID: 2067577859}
   ball: {fileID: 885362309}
 --- !u!4 &1889298499 stripped
 Transform:
@@ -4758,6 +4782,55 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &2067577859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2067577861}
+  - component: {fileID: 2067577862}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2067577861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067577859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00567, y: 2.03669, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2067577862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067577859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a578d9db04072bc49a91e88e86ac414c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryPlayer
+  slots:
+  - {fileID: 612510399}
+  - {fileID: 717471647}
+  - {fileID: 113830032}
+  emptySlotSprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
 --- !u!1 &2078657688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5015,3 +5088,4 @@ SceneRoots:
   - {fileID: 908324386}
   - {fileID: 1563478353}
   - {fileID: 906715298}
+  - {fileID: 2067577861}

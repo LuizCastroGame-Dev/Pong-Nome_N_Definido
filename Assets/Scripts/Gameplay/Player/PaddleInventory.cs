@@ -5,8 +5,8 @@ public class PaddleInventory : MonoBehaviour
 {
     public List<GameObject> playerInventory = new List<GameObject>();
 
-    public void AddInventory() 
-    {
-        playerInventory.Add(gameObject);
-    }
+    //public void AddInventory() 
+    //{
+    //    Debug.Log("");
+    //}
 }
