@@ -3363,14 +3363,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4418698098150554326, guid: 596ec0c9b50637c499984e73a7a254d1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.307
-      objectReference: {fileID: 0}
-    - target: {fileID: 4418698098150554326, guid: 596ec0c9b50637c499984e73a7a254d1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.384
-      objectReference: {fileID: 0}
-    - target: {fileID: 4418698098150554326, guid: 596ec0c9b50637c499984e73a7a254d1, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -4792,6 +4784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067577861}
   - component: {fileID: 2067577862}
+  - component: {fileID: 2067577863}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -4831,6 +4824,20 @@ MonoBehaviour:
   - {fileID: 717471647}
   - {fileID: 113830032}
   emptySlotSprite: {fileID: -5838847241383398214, guid: 2760a00c011c4ce4aa92e5b0b869115c, type: 3}
+  corSelecionada: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  corNormal: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2067577863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067577859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ee44b6d4f40b547b41b03a63ba4e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaddleInput
 --- !u!1 &2078657688
 GameObject:
   m_ObjectHideFlags: 0

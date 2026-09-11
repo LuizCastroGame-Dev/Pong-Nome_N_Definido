@@ -38,5 +38,10 @@ public abstract class PowerUpBase : MonoBehaviour
         }
     }
 
+    public void Ativar(GameObject target)
+    {
+        ApplyEffect(target);
+    }
+
     protected abstract void ApplyEffect(GameObject target);
 }
